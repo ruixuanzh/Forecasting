@@ -50,7 +50,8 @@ adf.test(diff(hprice))   # unit root of order 1
 # univariate time series 
 new <- diff(log(bankruptcy))
 
-###################################################### SARIMA
+##################  SARIMA  ###################################
+
 # implemented grid search to find the model with smallest test rmse and with residual has contant variance
 # there's none model's leven test p_value larger than 0.001
 vector = c()
@@ -79,7 +80,9 @@ for (p in 1:3){
   }
 }
 
-############################  log  SARIMA
+
+################## log  SARIMA  ###################################
+
 # implemented grid search to find the model with smallest test rmse
 # there's none model's leven test p_value larger than 0.001
 vector <- c()
@@ -136,6 +139,7 @@ plot(fc1)
 sqrt(mean((exp(fc1$mean) - bankruptcy_test)^2))
 
 ################## log ARIMAX model ~ X2, X3 ###################################
+
 # model selection : choose the best model that has smallest test mset, meanwhile satisfy all the underlying assumptions
 vector <- c()
 p_vector <- c()
